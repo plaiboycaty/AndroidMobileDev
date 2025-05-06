@@ -13,8 +13,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     //Khai báo các biến giao diện tại đây
-    EditText edtA, edtB, edtKQ;
-    Button btn;
+    EditText edtA, edtB, edtResult;
+    Button btnsum;
 
 
     @Override
@@ -25,17 +25,17 @@ public class MainActivity extends AppCompatActivity {
         //Ánh xạ id cho các biến giao diện
         edtA = findViewById(R.id.edtA);
         edtB = findViewById(R.id.edtB);
-        edtKQ = findViewById(R.id.edtKQ);
-        btn = findViewById(R.id.btn);
+        edtResult = findViewById(R.id.edtResult);
+        btnsum = findViewById(R.id.btnsum);
         //Xử lí tương tác với người dùng
         //Click vào button có sự kiện
-        btn.setOnClickListener(new View.OnClickListener() {
+        btnsum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int a = Integer.parseInt(edtA.getText().toString()); //Lấy dữ liệu từ edtA xong ép sang kiểu int
                 int b = Integer.parseInt(edtB.getText().toString());
                 int c = a + b;
-                edtKQ.setText(c+""); //Hiển thị kết quả nhưng set chỉ nhận kiểu string
+                edtResult.setText(c+""); //Hiển thị kết quả nhưng set chỉ nhận kiểu string
                 //Nên ép kiểu int sang string bằng 1 chuỗi rỗng
             }
         });
